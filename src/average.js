@@ -13,6 +13,7 @@
 
 const average = (arr) => {
   let sum = 0;
+  let div = arr.length + 1
   for (let i = 0; i < arr.length; i += 1) {
     if (typeof (arr[i]) === 'number') {
       arr[i] = Math.round(arr[i]);
@@ -20,12 +21,19 @@ const average = (arr) => {
     } else if (typeof (arr) === 'object') {
       arr = undefined;
       return arr;
-    } else {
+    } else if (typeof (arr) === NaN) {
+      return undefined;
+    }
+    else {
       sum = undefined;
       return sum;
     }    
   }
-  return sum / arr.length;
+  if (div <= 1) {
+    return undefined
+  } else {
+    return Math.round(sum / arr.length);
+    }
 };
   
 module.exports = average;
