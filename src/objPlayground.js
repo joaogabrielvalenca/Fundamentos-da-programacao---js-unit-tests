@@ -54,16 +54,15 @@ const calculator = (number1, number2) => {
   return objectCalculated;
 };
 
-
 const arrayGenerator = (type, object) => {
   if (type === 'values') {
-    return Object.values(object)
+    return Object.values(object);
   }
   if (type === 'keys') {
-    return Object.keys(object)
+    return Object.keys(object);
   }
   if (type === 'entries') {
-    return Object.entries(object)
+    return Object.entries(object);
   }
 };
 
