@@ -37,11 +37,11 @@
 const calculator = (number1, number2) => {
   let soma = number1 + number2;
   let multiplicacao = number1 * number2;
-  let divisao = number1 / number2;
+  let divisao = Math.trunc(number1 / number2);
   let subtracao = number1 - number2;
 
   if (number2 === 0) {
-    divisao = undefined
+    divisao = NaN;
   }
 
   let objectCalculated = {};
@@ -54,6 +54,17 @@ const calculator = (number1, number2) => {
   return objectCalculated;
 };
 
-const arrayGenerator = (type, object) => {};
+
+const arrayGenerator = (type, object) => {
+  if (type === 'values') {
+    return Object.values(object)
+  }
+  if (type === 'keys') {
+    return Object.keys(object)
+  }
+  if (type === 'entries') {
+    return Object.entries(object)
+  }
+};
 
 module.exports = { calculator, arrayGenerator };
