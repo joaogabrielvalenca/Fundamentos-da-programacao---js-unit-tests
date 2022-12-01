@@ -13,27 +13,22 @@
 
 const average = (arr) => {
   let sum = 0;
-  let div = arr.length + 1
+  let div = arr.length + 1;
+  let num;
   for (let i = 0; i < arr.length; i += 1) {
-    if (typeof (arr[i]) === 'number') {
-      arr[i] = Math.round(arr[i]);
+    num = arr[i];
+    if (typeof (num) === 'number') {
+      arr[i] = Math.round(num);
       sum += arr[i];  
-    } else if (typeof (arr) === 'object') {
-      arr = undefined;
-      return arr;
-    } else if (typeof (arr) === NaN) {
-      return undefined;
-    }
-    else {
+    } else {
       sum = undefined;
       return sum;
-    }    
+    }
   }
   if (div <= 1) {
-    return undefined
-  } else {
+    return undefined;
+  } 
     return Math.round(sum / arr.length);
-    }
 };
   
 module.exports = average;

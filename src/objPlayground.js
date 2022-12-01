@@ -44,13 +44,8 @@ const calculator = (number1, number2) => {
     divisao = NaN;
   }
 
-  let objectCalculated = {};
+  let objectCalculated = { sum: soma, mult: multiplicacao, div: divisao, sub: subtracao }; 
 
-  objectCalculated.sum = soma;
-  objectCalculated.mult = multiplicacao;
-  objectCalculated.div = divisao;
-  objectCalculated.sub = subtracao;
-  
   return objectCalculated;
 };
 
